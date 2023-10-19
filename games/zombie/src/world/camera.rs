@@ -24,7 +24,7 @@ fn add_camera(mut commands: Commands) {
             tonemapping: Tonemapping::ReinhardLuminance,
             transform: Transform {
                 translation: Vec3::new(8.2, 4.0, 11.5),
-                rotation: Quat::from_xyzw(0.0, 5.0, 0.0, 0.0),
+                rotation: Quat::from_euler(EulerRot::XYZ, 0.0, 5.0, 0.0),
                 ..default()
             },
             ..default()
@@ -35,7 +35,7 @@ fn add_camera(mut commands: Commands) {
         },
         FogSettings {
             falloff: FogFalloff::Exponential {
-                density: 0.07
+                density: 0.03
             },
             color: Color::rgba(0.05, 0.05, 0.05, 1.0),
             ..default()

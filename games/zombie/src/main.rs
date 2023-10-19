@@ -10,7 +10,7 @@ use bevy::{
 
 use bevy::diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin};
 use bevy_inspector_egui::quick::WorldInspectorPlugin;
-use bevy_spectator::{Spectator, SpectatorPlugin};
+use bevy_editor_pls::prelude::*;
 use crate::utils::consts;
 
 fn main() {
@@ -27,7 +27,7 @@ fn main() {
     if (consts::DEBUG) {
         app.add_plugins((
             WorldInspectorPlugin::new(),
-            SpectatorPlugin,
+            EditorPlugin::default(),
             LogDiagnosticsPlugin::default(),
             FrameTimeDiagnosticsPlugin::default()
         ));
